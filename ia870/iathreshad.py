@@ -4,7 +4,7 @@
 from numpy import *
 
 def iathreshad(f, f1, f2=None):
-    from iabinary import iabinary
+    from .iabinary import iabinary
 
     if f2 is None:
       y = (f1 <= f)
