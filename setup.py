@@ -19,7 +19,7 @@ setup(
     keywords=["image processing", "morphological image processing", "mathematical morphology"],
     url="https://github.com/robertoalotufo/ia870",
     packages=['ia870'],
-    long_description=read('README.txt'),
+    long_description=read('README.md'),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
