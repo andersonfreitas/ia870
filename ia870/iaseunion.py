@@ -1,14 +1,16 @@
 # -*- encoding: utf-8 -*-
 # Module iaseunion
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
 
 def iaseunion(B1, B2):
-    from ialimits import ialimits
+    from .ialimits import ialimits
 
     if B1.dtype != B2.dtype:
-        print 'B1=',B1
-        print 'B2=',B2
+        print('B1=',B1)
+        print('B2=',B2)
     assert B1.dtype == B2.dtype, \
       'iaseunion: Cannot have different datatypes: \
       %s and %s' % (str(B1.dtype), str(B2.dtype))
@@ -16,7 +18,7 @@ def iaseunion(B1, B2):
     #if len(B1) == 0: return B2
     if len(B1.shape) == 1: B1 = B1[newaxis,:]
     if len(B2.shape) == 1: B2 = B2[newaxis,:]
-    if B1.shape <> B2.shape:
+    if B1.shape != B2.shape:
         inf = ialimits(B1)[0]
         h1,w1 = B1.shape
         h2,w2 = B2.shape

@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iamat2set
 
+from __future__ import absolute_import
 from numpy import *
+from six.moves import range
 
 def iamat2set(A):
-    from ialimits import ialimits
+    from .ialimits import ialimits
 
 
     if len(A.shape) == 1: A = A[newaxis,:]
@@ -13,7 +15,7 @@ def iamat2set(A):
         offsets = offsets[0]        # for compatibility with numarray
     if len(offsets) == 0: return ([],[])
     (h,w) = A.shape
-    x = range(2)
+    x = list(range(2))
     x[0] = offsets/w - (h-1)/2
     x[1] = offsets%w - (w-1)/2
     x = transpose(x)

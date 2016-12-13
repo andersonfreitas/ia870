@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
 # Module iasedil
 
+from __future__ import absolute_import
 from numpy import *
+from six.moves import range
 
 def iasedil(B1, B2):
     from ia870 import ialimits, iagray, iabinary, iaisbinary, iamat2set, iaadd4dil, iasetrans, iaseunion

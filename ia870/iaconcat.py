@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iaconcat
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaconcat(DIM, X1, X2, X3=None, X4=None):

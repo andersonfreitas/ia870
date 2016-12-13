@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iasuprec
 
+from __future__ import absolute_import
 from numpy import *
 
 def iasuprec(f, g, Bc=None):
-    from iacero import iacero
-    from iasecross import iasecross
+    from .iacero import iacero
+    from .iasecross import iasecross
     if Bc is None:
         Bc = iasecross(None)
 

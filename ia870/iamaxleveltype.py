@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iamaxleveltype
 
+from __future__ import absolute_import
 from numpy import *
 
 def iamaxleveltype(TYPE='uint8'):

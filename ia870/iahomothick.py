@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iahomothick
 
+from __future__ import absolute_import
 from numpy import *
 
 def iahomothick():
-    from iase2hmt import iase2hmt
-    from iabinary import iabinary
+    from .iase2hmt import iase2hmt
+    from .iabinary import iabinary
 
 
     Iab = iase2hmt( iabinary([[1,1,1],

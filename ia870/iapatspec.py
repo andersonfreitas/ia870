@@ -1,13 +1,14 @@
 # -*- encoding: utf-8 -*-
 # Module iapatspec
 
+from __future__ import absolute_import
 from numpy import *
 
 def iapatspec(f, type='OCTAGON', n=65535, Bc=None, Buser=None):
-    from iaisbinary import iaisbinary
-    from iaopentransf import iaopentransf
+    from .iaisbinary import iaisbinary
+    from .iaopentransf import iaopentransf
     from iahistogram import iahistogram
-    from iasecross import iasecross
+    from .iasecross import iasecross
     if Bc is None:
         Bc = iasecross(None)
     if Buser is None:

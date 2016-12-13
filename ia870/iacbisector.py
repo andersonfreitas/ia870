@@ -1,15 +1,17 @@
 # -*- encoding: utf-8 -*-
 # Module iacbisector
 
+from __future__ import absolute_import
 from numpy import *
+from six.moves import range
 
 def iacbisector(f, B, n):
-    from iaintersec import iaintersec
-    from iasesum import iasesum
-    from iaero import iaero
-    from iacdil import iacdil
-    from iasubm import iasubm
-    from iaunion import iaunion
+    from .iaintersec import iaintersec
+    from .iasesum import iasesum
+    from .iaero import iaero
+    from .iacdil import iacdil
+    from .iasubm import iasubm
+    from .iaunion import iaunion
 
     y = iaintersec(f,0)
     for i in range(n):

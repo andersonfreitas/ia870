@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iaopenrecth
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaopenrecth(f, bero=None, bc=None):
-    from iasubm import iasubm
-    from iaopenrec import iaopenrec
-    from iasecross import iasecross
+    from .iasubm import iasubm
+    from .iaopenrec import iaopenrec
+    from .iasecross import iasecross
     if bero is None:
         bero = iasecross()
     if bc is None:

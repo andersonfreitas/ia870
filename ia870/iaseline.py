@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iaseline
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaseline(l=3, theta=0):
-    from iaset2mat import iaset2mat
-    from iabinary import iabinary
+    from .iaset2mat import iaset2mat
+    from .iabinary import iabinary
 
     theta = pi*theta/180
     if abs(tan(theta)) <= 1:

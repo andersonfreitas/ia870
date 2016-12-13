@@ -2,11 +2,11 @@
 # Module iaunpad
 
 from numpy import *
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def iaunpad(f, B=iasecross()):
-    from iamat2set import iamat2set
-    from iaseshow import iaseshow
+    from .iamat2set import iamat2set
+    from .iaseshow import iaseshow
 
     i,v=iamat2set( iaseshow(B));
     mni=minimum.reduce(i)

@@ -1,7 +1,10 @@
 # -*- encoding: utf-8 -*-
 # Module iagplot
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
+from six.moves import range
 
 def iagplot(plotitems=[], commands=[], ptitle="", xlabel="", ylabel="", size=(320,240)):
 
@@ -24,15 +27,15 @@ def iagplot(plotitems=[], commands=[], ptitle="", xlabel="", ylabel="", size=(32
         cmdf = open(cmdfilename, 'w')
         ver = get_gnuver()
         if ver.startswith('4.'):
-            print >> cmdf, 'set terminal png size %d,%d transparent small' % size
+            print('set terminal png size %d,%d transparent small' % size, file=cmdf)
         else:
-            print >> cmdf, 'set terminal png transparent small picsize %d %d' % size
-        print >> cmdf, 'set output "%s"' % imgfilename.replace('\\', '/')
-        print >> cmdf, 'set title "%s"'  % ptitle
-        print >> cmdf, 'set xlabel "%s"' % xlabel
-        print >> cmdf, 'set ylabel "%s"' % ylabel
+            print('set terminal png transparent small picsize %d %d' % size, file=cmdf)
+        print('set output "%s"' % imgfilename.replace('\\', '/'), file=cmdf)
+        print('set title "%s"'  % ptitle, file=cmdf)
+        print('set xlabel "%s"' % xlabel, file=cmdf)
+        print('set ylabel "%s"' % ylabel, file=cmdf)
         for cmd in commands:
-            print >> cmdf, cmd
+            print(cmd, file=cmdf)
         NN = len(plotitems)
         strlist = []
         for ii in range(NN):
@@ -58,12 +61,12 @@ def iagplot(plotitems=[], commands=[], ptitle="", xlabel="", ylabel="", size=(32
                 style = 'title "" with lines'
 
             for i in range(len(yy)):
-                print >> dataf, '%f %f' % (xx[i], yy[i])
+                print('%f %f' % (xx[i], yy[i]), file=dataf)
             dataf.close();
             strlist.append('"%s" %s' % (datafile, style))
 
-        print >> cmdf, 'plot', ', '.join(strlist)
-        print >> cmdf
+        print('plot', ', '.join(strlist), file=cmdf)
+        print(file=cmdf)
         cmdf.close()
         #
         os.system('"%s" %s' % (GNUPLOT, cmdfilename))

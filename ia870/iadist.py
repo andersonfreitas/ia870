@@ -1,16 +1,17 @@
 # -*- encoding: utf-8 -*-
 # Module iadist
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
-from iasecross import iasecross
+from .upper import upper
+from .iasecross import iasecross
 
 def iadist(f, Bc=iasecross(), METRIC=None):
-    from iagray import iagray
-    from iaintersec import iaintersec
-    from iaisequal import iaisequal
-    from iaero import iaero
-    from iasebox import iasebox
+    from .iagray import iagray
+    from .iaintersec import iaintersec
+    from .iaisequal import iaisequal
+    from .iaero import iaero
+    from .iasebox import iasebox
 
     if METRIC is not None: METRIC = upper(METRIC)
     f = iagray(f,'uint16')

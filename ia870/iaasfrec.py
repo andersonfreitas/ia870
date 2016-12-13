@@ -1,16 +1,17 @@
 # -*- encoding: utf-8 -*-
 # Module iaasfrec
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
-from iasecross import iasecross
+from .iasecross import iasecross
+from six.moves import range
 
 def iaasfrec(f, SEQ="OC", b=iasecross(), bc=iasecross(), n=1):
-    from iasesum import iasesum
-    from iacloserec import iacloserec
-    from iaopenrec import iaopenrec
+    from .iasesum import iasesum
+    from .iacloserec import iacloserec
+    from .iaopenrec import iaopenrec
 
-    SEQ = upper(SEQ)
+    SEQ = SEQ.upper()
     y = f
     if SEQ == 'OC':
         for i in range(1,n+1):

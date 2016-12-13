@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iagsurf
 
+from __future__ import absolute_import
 def iagsurf(f, vx=1, vy=0, vz=1):
 
     import numpy as np

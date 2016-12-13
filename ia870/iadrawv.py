@@ -1,8 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iadrawv
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
-from string import upper
+from .upper import upper
+from six.moves import range
 
 def iadrawv(f, data, value, GEOM):
 
@@ -16,7 +19,7 @@ def iadrawv(f, data, value, GEOM):
     if len(f.shape) == 1: f = f[newaxis,:]
     if value.shape == (): value = value + zeros(lin.shape)
     if len(lin) != len(value):
-        print 'Number of points must match n. of colors.'
+        print('Number of points must match n. of colors.')
         return None
     if GEOM == 'POINT':
         ravel(y)[i] = value
@@ -47,6 +50,6 @@ def iadrawv(f, data, value, GEOM):
             x0,y0,x1,y1 = d[1],d[0],d[3],d[2]
             y[x0:x1+1,y0:y1+1] = value[k]
     else:
-        print "GEOM should be 'POINT', 'LINE', 'RECT', or 'FRECT'."
+        print("GEOM should be 'POINT', 'LINE', 'RECT', or 'FRECT'.")
     return y
 

@@ -1,29 +1,31 @@
 # -*- encoding: utf-8 -*-
 # Module iaskelm
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
-from iasecross import iasecross
-from string import upper
+from .iasecross import iasecross
+from six.moves import range
 
 def iaskelm(f, B=iasecross(), option="binary"):
-    from iaisbinary import iaisbinary
-    from ialimits import ialimits
-    from iagray import iagray
-    from iaintersec import iaintersec
-    from iasesum import iasesum
-    from iaero import iaero
-    from iaisequal import iaisequal
-    from iaopenth import iaopenth
-    from iasedil import iasedil
-    from iaunion import iaunion
-    from iabinary import iabinary
-    from iapad import iapad
-    from iaunpad import iaunpad
+    from .iaisbinary import iaisbinary
+    from .ialimits import ialimits
+    from .iagray import iagray
+    from .iaintersec import iaintersec
+    from .iasesum import iasesum
+    from .iaero import iaero
+    from .iaisequal import iaisequal
+    from .iaopenth import iaopenth
+    from .iasedil import iasedil
+    from .iaunion import iaunion
+    from .iabinary import iabinary
+    from .iapad import iapad
+    from .iaunpad import iaunpad
 
     assert iaisbinary(f),'Input binary image only'
-    option = upper(option)
+    option = option.upper()
     f = iapad(f,B)
-    print f
+    print(f)
     k1,k2 = ialimits(f)
     y = iagray( iaintersec(f, k1),'uint16')
     iszero = asarray(y)

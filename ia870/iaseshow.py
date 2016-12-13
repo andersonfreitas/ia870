@@ -1,8 +1,10 @@
 # -*- encoding: utf-8 -*-
 # Module iaseshow
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iaseshow(B, option="NORMAL"):
     from ia870 import iaisbinary, iaintersec, iagray, iabinary
@@ -26,7 +28,7 @@ def iaseshow(B, option="NORMAL"):
         y = iabshow(b1,y,b0)
         return y
     else:
-        print 'iaseshow: not a valid flag: NORMAL, EXPAND or NON-FLAT'
+        print('iaseshow: not a valid flag: NORMAL, EXPAND or NON-FLAT')
 
     y = iasedil(y,B)
     return y

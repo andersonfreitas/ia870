@@ -1,18 +1,19 @@
 # -*- encoding: utf-8 -*-
 # Module iaasf
 
+
 from numpy import *
-from string import upper
+from six.moves import range
 
 def iaasf(f, SEQ="OC", b=None, n=1):
-    from iasesum import iasesum
-    from iaopen import iaopen
-    from iaclose import iaclose
-    from iasecross import iasecross
+    from .iasesum import iasesum
+    from .iaopen import iaopen
+    from .iaclose import iaclose
+    from .iasecross import iasecross
     if b is None:
         b = iasecross(None)
 
-    SEQ=upper(SEQ)
+    SEQ=SEQ.upper()
     y = f
     if SEQ == 'OC':
         for i in range(1,n+1):

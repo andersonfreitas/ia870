@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iaNlut
 
+from __future__ import absolute_import
 import numpy as np
 def iaNlut(s,offset):
     '''Precompute array of neighbors. Optimized by broadcast.

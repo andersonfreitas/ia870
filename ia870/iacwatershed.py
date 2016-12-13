@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iacwatershed
 
+from __future__ import absolute_import
 from ia870 import iasecross, iaisbinary, ialabel, iasubm, iaero, iabinary
+from six.moves import range
 
 def iacwatershed(f, g, Bc=iasecross(), option='LINES'):
-    from ipdp import se2offset
+    from .ipdp import se2offset
 
     if iaisbinary(g):
         g = ialabel(g, Bc)
@@ -17,7 +19,7 @@ def iacwatershed(f, g, Bc=iasecross(), option='LINES'):
 
 def ift_m(im, offsets, M):
 
-    from ipdp import wsImage
+    from .ipdp import wsImage
 
     # initialise variables
     ws = wsImage(im)
@@ -30,12 +32,12 @@ def ift_m(im, offsets, M):
     Mset = dict()
     for p in D:
         if imM[p] > 0:
-            if Mset.has_key(imM[p]):
+            if imM[p] in Mset:
                 Mset[imM[p]].append(p)
             else:
                 Mset[imM[p]] = [p]
 
-    ift_k(ws, im, Mset.values(), N, D, lab)
+    ift_k(ws, im, list(Mset.values()), N, D, lab)
 
     return ws.end()
 
@@ -45,7 +47,7 @@ MASK = -2
 def ift_k(ws, im, M, N, D, lab):
 
     import numpy as np
-    from ipdp import wsHeapQueue
+    from .ipdp import wsHeapQueue
 
     # create the working images
     done = ws.makeWorkCopy(False)
@@ -56,7 +58,7 @@ def ift_k(ws, im, M, N, D, lab):
 
     queue = wsHeapQueue()
 
-    for m in xrange(len(M)):
+    for m in range(len(M)):
         for p in M[m]:
             c1[p] = im[p]
             lab[p] = m+1

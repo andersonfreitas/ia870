@@ -1,17 +1,18 @@
 # -*- encoding: utf-8 -*-
 # Module iabshow
 
+from __future__ import absolute_import
 from numpy import *
 
 def iabshow(f1, f2=None, f3=None, factor=17):
-    from iabinary import iabinary
-    from iaframe import iaframe
-    from iadil import iadil
-    from iaunion import iaunion
-    from iasedisk import iasedisk
-    from iaserot import iaserot
-    from iasecross import iasecross
-    from iasesum import iasesum
+    from .iabinary import iabinary
+    from .iaframe import iaframe
+    from .iadil import iadil
+    from .iaunion import iaunion
+    from .iasedisk import iasedisk
+    from .iaserot import iaserot
+    from .iasecross import iasecross
+    from .iasesum import iasesum
 
     assert f1.dtype == bool, 'f1 must be boolean image'
     factor = max(factor,9)

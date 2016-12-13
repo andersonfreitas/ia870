@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iaclose
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaclose(f, b=None):
-    from iaero import iaero
-    from iadil import iadil
-    from iasecross import iasecross
+    from .iaero import iaero
+    from .iadil import iadil
+    from .iasecross import iasecross
     if b is None:
         b = iasecross()
 

@@ -1,16 +1,17 @@
 # -*- encoding: utf-8 -*-
 # Module iais
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iais(f1, oper, f2=None, oper1=None, f3=None):
-    from iaisbinary import iaisbinary
-    from iaisequal import iaisequal
-    from iaislesseq import iaislesseq
-    from ianeg import ianeg
-    from iathreshad import iathreshad
-    from iabinary import iabinary
+    from .iaisbinary import iaisbinary
+    from .iaisequal import iaisequal
+    from .iaislesseq import iaislesseq
+    from .ianeg import ianeg
+    from .iathreshad import iathreshad
+    from .iabinary import iabinary
 
 
     if f2 == None:

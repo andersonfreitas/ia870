@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module ianeg
 
+from __future__ import absolute_import
 from numpy import *
 
 def ianeg(f):
-    from ialimits import ialimits
+    from .ialimits import ialimits
 
     if ialimits(f)[0] == (- ialimits(f)[1]):
        y = -f

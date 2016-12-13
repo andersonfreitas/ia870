@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iaframe
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaframe(f, WT=1, HT=1, DT=0, k1=None, k2=None):
-    from iaunion import iaunion
-    from iaintersec import iaintersec
-    from ialimits import ialimits
+    from .iaunion import iaunion
+    from .iaintersec import iaintersec
+    from .ialimits import ialimits
 
     if k1 is None: k1 = ialimits(f)[1]
     if k2 is None: k2 = ialimits(f)[0]

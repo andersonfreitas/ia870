@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iainterot
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iainterot(Iab, theta=45, DIRECTION="CLOCKWISE"):
-    from iase2hmt import iase2hmt
-    from iaserot import iaserot
+    from .iase2hmt import iase2hmt
+    from .iaserot import iaserot
 
 
     DIRECTION = upper(DIRECTION)

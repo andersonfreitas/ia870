@@ -1,9 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iaareaopen
 
+from __future__ import absolute_import
 import numpy as np
 import ia870 as MT
-from iasecross import iasecross
+from .iasecross import iasecross
+from six.moves import range
 def iaareaopen_eq(f, a, Bc=iasecross()):
 
     if f.dtype == np.bool:
@@ -14,7 +16,7 @@ def iaareaopen_eq(f, a, Bc=iasecross()):
       y = np.zeros_like(f)
       k1 = f.min()
       k2 = f.max()
-      for k in xrange(k1,k2+1):   # gray-scale, use thresholding decomposition
+      for k in range(k1,k2+1):   # gray-scale, use thresholding decomposition
         fk = (f >= k)
         fo = MT.iaareaopen(fk,a,Bc)
         if not fo.any():

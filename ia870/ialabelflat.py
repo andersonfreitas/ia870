@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 # Module ialabelflat
 
+from __future__ import absolute_import
 import numpy as np
 import ia870 as MT
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def ialabelflat(f, Bc=iasecross(), delta=0):
     fr = f.astype(np.int) + 1

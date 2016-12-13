@@ -1,14 +1,16 @@
 # -*- encoding: utf-8 -*-
 # Module iaskelmrec
 
+from __future__ import absolute_import
 from numpy import *
+from six.moves import range
 
 def iaskelmrec(f, B=None):
-    from iabinary import iabinary
-    from iaintersec import iaintersec
-    from iadil import iadil
-    from iaunion import iaunion
-    from iasecross import iasecross
+    from .iabinary import iabinary
+    from .iaintersec import iaintersec
+    from .iadil import iadil
+    from .iaunion import iaunion
+    from .iasecross import iasecross
     if B is None:
         B = iasecross(None)
 

@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iaintersec
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaintersec(f1, f2, *args):

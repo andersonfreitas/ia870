@@ -1,8 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iagrain
 
+from __future__ import absolute_import
+from __future__ import print_function
 import numpy as np
-from string import upper
+from .upper import upper
+from six.moves import range
 
 def iagrain(fr, f, measurement, option="image"):
 
@@ -40,8 +43,8 @@ def iagrain(fr, f, measurement, option="image"):
             if option == 'DATA': y[i-1] = val
             else               : y[fr==i] = val
     elif measurement == 'STD1':
-        print "'STD1' is not implemented"
+        print("'STD1' is not implemented")
     else:
-        print "Measurement should be 'MAX', 'MIN', 'MEAN', 'SUM', 'STD', 'STD1'."
+        print("Measurement should be 'MAX', 'MIN', 'MEAN', 'SUM', 'STD', 'STD1'.")
     return y
 

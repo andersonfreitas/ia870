@@ -1,16 +1,18 @@
 # -*- encoding: utf-8 -*-
 # Module iadil
 
+from __future__ import absolute_import
 from numpy import *
+from six.moves import range
 
 def iadil(f, b=None):
-    from iamat2set import iamat2set
-    from ialimits import ialimits
-    from iaisbinary import iaisbinary
-    from iaintersec import iaintersec
-    from iagray import iagray
-    from iaadd4dil import iaadd4dil
-    from iasecross import iasecross
+    from .iamat2set import iamat2set
+    from .ialimits import ialimits
+    from .iaisbinary import iaisbinary
+    from .iaintersec import iaintersec
+    from .iagray import iagray
+    from .iaadd4dil import iaadd4dil
+    from .iasecross import iasecross
 
     if b is None: b = iasecross()
 

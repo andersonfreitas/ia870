@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 # Module iacmp
 
+from __future__ import absolute_import
 from numpy import *
 
 def iacmp(f1, oper, f2, oper1=None, f3=None):
-    from iaintersec import iaintersec
-    from iabinary import iabinary
+    from .iaintersec import iaintersec
+    from .iabinary import iabinary
 
 
     if   oper == '==':    y = (f1==f2)

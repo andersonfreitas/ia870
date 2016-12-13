@@ -1,14 +1,17 @@
 # -*- encoding: utf-8 -*-
 # Module iablob
 
+from __future__ import absolute_import
+from __future__ import print_function
 import numpy as np
-from string import upper
+from .upper import upper
 import ia870
+from six.moves import range
 
 def iablob(fr, measurement, option="image"):
 
-    measurement = upper(measurement)
-    option      = upper(option)
+    measurement = measurement.upper()
+    option      = option.upper()
     if len(fr.shape) == 1: fr = fr[newaxis,:]
     n = fr.max()
     if   option      == 'DATA':        y = []
@@ -23,11 +26,11 @@ def iablob(fr, measurement, option="image"):
         if option == 'DATA':
             y = area[1::]
         else:
-            for i in xrange(1,n+1):
+            for i in range(1,n+1):
                y[fr==i] = area[i]
 
     elif measurement == 'CENTROID':
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
             aux  = (fr==i)
             xind,yind = np.nonzero(aux)
             area = len(xind)
@@ -36,7 +39,7 @@ def iablob(fr, measurement, option="image"):
             else               : y[centroid[0],centroid[1]] = 1
 
     elif measurement == 'BOUNDINGBOX':
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
             aux = (fr==i)
             col, = np.nonzero(aux.any(0))
             row, = np.nonzero(aux.any(1))
@@ -49,7 +52,7 @@ def iablob(fr, measurement, option="image"):
 
     elif measurement == 'PERIMETER':
         Bc = ia870.iasecross()
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
            aux = fr == i
            grad = aux - ia870.iaero(aux,Bc)
            if option == 'DATA': y.append(grad.sum())
@@ -60,7 +63,7 @@ def iablob(fr, measurement, option="image"):
         Bc = ia870.iasecross()
         area = np.bincount(fr.ravel())
         perim = []
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
            aux = fr == i
            grad = aux - ia870.iaero(aux,Bc)
            perim.append(grad.sum())
@@ -71,7 +74,7 @@ def iablob(fr, measurement, option="image"):
             y = 4*np.pi*area[1::]/(perim**2)
 
     elif measurement == 'ASPECTRATIO':
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
             aux = (fr==i)
             col, = np.nonzero(aux.any(0))
             row, = np.nonzero(aux.any(1))
@@ -80,7 +83,7 @@ def iablob(fr, measurement, option="image"):
                 y[aux] = 1.*(min(col[-1]-col[0],row[-1]-row[0])+1)/(max(col[-1]-col[0],row[-1]-row[0])+1)
 
     elif measurement == 'COMPACTNESS':
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
             aux  = (fr==i)
             xind,yind = np.nonzero(aux)
             area = len(xind)
@@ -92,7 +95,7 @@ def iablob(fr, measurement, option="image"):
             else               : y[aux] = compactness
 
     elif measurement == 'ECCENTRICITY':
-        for i in xrange(1,n+1):
+        for i in range(1,n+1):
             aux  = (fr==i)
             xind,yind = np.nonzero(aux)
             area = len(xind)
@@ -105,8 +108,8 @@ def iablob(fr, measurement, option="image"):
             else               : y[aux] = eccentricity
 
     else:
-        print "Measurement option should be 'AREA','CENTROID', 'BOUNDINGBOX', 'PERIMETER', "
-        print "'ASPECTRATIO', 'CIRCULARITY', 'COMPACTNESS' or 'ECCENTRICITY'."
+        print("Measurement option should be 'AREA','CENTROID', 'BOUNDINGBOX', 'PERIMETER', ")
+        print("'ASPECTRATIO', 'CIRCULARITY', 'COMPACTNESS' or 'ECCENTRICITY'.")
 
     return np.array(y)
 

@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iapad4n
 
+from __future__ import absolute_import
 from numpy import *
 
 def iapad4n(f, Bc, value, scale=1):
-    from iaseshow import iaseshow
+    from .iaseshow import iaseshow
 
     if type(Bc) is not array:
       Bc = iaseshow(Bc)

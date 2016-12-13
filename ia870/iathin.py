@@ -2,7 +2,7 @@
 # Module iathin
 
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iathin(f, Iab=None, n=-1, theta=45, DIRECTION="CLOCKWISE"):
     import ia870 as MT

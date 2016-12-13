@@ -1,18 +1,19 @@
 # -*- encoding: utf-8 -*-
 # Module iainpos
 
+from __future__ import absolute_import
 from numpy import *
 
-from iasecross import iasecross
+from .iasecross import iasecross
 def iainpos(f, g, bc=iasecross()):
-    from iaisbinary import iaisbinary
-    from iagray import iagray
-    from ianeg import ianeg
+    from .iaisbinary import iaisbinary
+    from .iagray import iagray
+    from .ianeg import ianeg
     from iadatatype import iadatatype
-    from ialimits import ialimits
-    from iasuprec import iasuprec
-    from iaintersec import iaintersec
-    from iaunion import iaunion
+    from .ialimits import ialimits
+    from .iasuprec import iasuprec
+    from .iaintersec import iaintersec
+    from .iaunion import iaunion
 
     assert iaisbinary(f),'First parameter must be binary image'
     fg = iagray( ianeg(f), iadatatype(g))

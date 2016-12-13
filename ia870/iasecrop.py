@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iasecrop
 
+from __future__ import absolute_import
 def iasecrop(f):
     import numpy as np
     from ia870 import ialimits, iagray

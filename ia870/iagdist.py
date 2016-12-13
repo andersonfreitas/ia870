@@ -1,17 +1,18 @@
 # -*- encoding: utf-8 -*-
 # Module iagdist
 
+from __future__ import absolute_import
 from numpy import *
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def iagdist(f, g, Bc=iasecross(), METRIC=None):
-    from ianeg import ianeg
-    from iagray import iagray
-    from iaintersec import iaintersec
-    from iaisequal import iaisequal
-    from iacero import iacero
-    from iaaddm import iaaddm
-    from iaunion import iaunion
+    from .ianeg import ianeg
+    from .iagray import iagray
+    from .iaintersec import iaintersec
+    from .iaisequal import iaisequal
+    from .iacero import iacero
+    from .iaaddm import iaaddm
+    from .iaunion import iaunion
 
     assert METRIC is None,'Does not support EUCLIDEAN'
     fneg,gneg = ianeg(f),ianeg(g)

@@ -1,21 +1,23 @@
 # -*- encoding: utf-8 -*-
 # Module iaopentransf
 
+from __future__ import absolute_import
+from __future__ import print_function
 from numpy import *
-from string import find, upper
-from iasecross import iasecross
+from .upper import find, upper
+from .iasecross import iasecross
 
 def iaopentransf(f, type='OCTAGON', n=65535, Bc=iasecross(), Buser=iasecross()):
-    from iaisbinary import iaisbinary
-    from iabinary import iabinary
-    from iaisequal import iaisequal
-    from iaopen import iaopen
-    from iasesum import iasesum
-    from iasedisk import iasedisk
-    from iaaddm import iaaddm
-    from iagray import iagray
-    from iagrain import iagrain
-    from ialabel import ialabel
+    from .iaisbinary import iaisbinary
+    from .iabinary import iabinary
+    from .iaisequal import iaisequal
+    from .iaopen import iaopen
+    from .iasesum import iasesum
+    from .iasedisk import iasedisk
+    from .iaaddm import iaaddm
+    from .iagray import iagray
+    from .iagrain import iagrain
+    from .ialabel import ialabel
 
     assert iaisbinary(f),'Error: input image is not binary'
     type = upper(type)
@@ -43,14 +45,14 @@ def iaopentransf(f, type='OCTAGON', n=65535, Bc=iasecross(), Buser=iasecross()):
         se = Buser
         n  = min(n,min(f.shape))
     else:
-        print 'Error: only accepts OCTAGON, CHESSBOARD, CITY-BLOCK, LINEAR-H, LINEAR-V, LINEAR-45R, LINEAR-45L, or USER as type, or with suffix -REC.'
+        print('Error: only accepts OCTAGON, CHESSBOARD, CITY-BLOCK, LINEAR-H, LINEAR-V, LINEAR-45R, LINEAR-45L, or USER as type, or with suffix -REC.')
         return []
     k = 0
     y = uint16(zeros(f.shape))
     a = iabinary([1])
     z = iabinary([0])
     while not ( iaisequal(a,z) or (k>=n)):
-        print 'processing r=',k
+        print('processing r=',k)
         if flag:
             a = iaopen(f,iasesum(se,k))
         else:

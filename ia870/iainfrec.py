@@ -1,8 +1,9 @@
 # -*- encoding: utf-8 -*-
 # Module iainfrec
 
+from __future__ import absolute_import
 import numpy as np
-from iasecross import iasecross
+from .iasecross import iasecross
 import ia870 as MT
 
 def iainfrec_eq(f, g, bc=iasecross()):

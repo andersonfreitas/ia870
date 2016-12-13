@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
 # Module iasesum
 
+from __future__ import absolute_import
 import numpy as np
+from six.moves import range
 
 def iasesum(B, N=1):
     from ia870 import iaisbinary, iabinary, iasedil

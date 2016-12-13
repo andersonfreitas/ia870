@@ -1,17 +1,19 @@
 # -*- encoding: utf-8 -*-
 # Module iacthin
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
+from six.moves import range
 
 def iacthin(f, g, Iab=None, n=-1, theta=45, DIRECTION="CLOCKWISE"):
-    from iaisbinary import iaisbinary
-    from iasupgen import iasupgen
-    from iainterot import iainterot
-    from iaunion import iaunion
-    from iasubm import iasubm
-    from iaisequal import iaisequal
-    from iahomothin import iahomothin
+    from .iaisbinary import iaisbinary
+    from .iasupgen import iasupgen
+    from .iainterot import iainterot
+    from .iaunion import iaunion
+    from .iasubm import iasubm
+    from .iaisequal import iaisequal
+    from .iahomothin import iahomothin
     if Iab is None:
         Iab = iahomothin()
 

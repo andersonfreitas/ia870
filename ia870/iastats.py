@@ -1,8 +1,9 @@
 # -*- encoding: utf-8 -*-
 # Module iastats
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iastats(f, measurement):
 

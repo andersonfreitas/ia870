@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iapad
 
+from __future__ import absolute_import
 from numpy import *
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def iapad(f, B=iasecross(), value=0):
-    from iamat2set import iamat2set
-    from iaseshow import iaseshow
+    from .iamat2set import iamat2set
+    from .iaseshow import iaseshow
 
     i,v=iamat2set( iaseshow(B));
     mni=i.min(axis=0)

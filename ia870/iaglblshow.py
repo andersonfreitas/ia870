@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iaglblshow
 
+from __future__ import absolute_import
 from numpy import *
 from numpy.random import rand
 
 def iaglblshow(X, border=0.0):
-    from iastats import iastats
-    from iaconcat import iaconcat
+    from .iastats import iastats
+    from .iaconcat import iaconcat
 
     iain = iastats(X,'min')
     iaax = iastats(X,'max')

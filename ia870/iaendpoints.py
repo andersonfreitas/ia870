@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iaendpoints
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iaendpoints(OPTION="LOOP"):
-    from iase2hmt import iase2hmt
-    from iabinary import iabinary
+    from .iase2hmt import iase2hmt
+    from .iabinary import iabinary
 
 
     Iab = None

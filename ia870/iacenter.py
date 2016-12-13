@@ -1,14 +1,15 @@
 # -*- encoding: utf-8 -*-
 # Module iacenter
 
+from __future__ import absolute_import
 from numpy import *
 
 def iacenter(f, b=None):
-    from iaasf import iaasf
-    from iaunion import iaunion
-    from iaintersec import iaintersec
-    from iaisequal import iaisequal
-    from iasecross import iasecross
+    from .iaasf import iaasf
+    from .iaunion import iaunion
+    from .iaintersec import iaintersec
+    from .iaisequal import iaisequal
+    from .iasecross import iasecross
     if b is None:
         b = iasecross(None)
 

@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 # Module ialabel
 
+from __future__ import absolute_import
 import numpy as np
 import ia870 as MT
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def ialabel(f, Bc=iasecross()):
     return ialabel_unionfind(f,Bc)

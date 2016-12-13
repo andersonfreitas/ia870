@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iaadd4dil
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaadd4dil(f, c):
-    from ialimits import ialimits
+    from .ialimits import ialimits
 
     if not c:
        return f

@@ -1,12 +1,14 @@
 # -*- encoding: utf-8 -*-
 # Module iaintershow
 
+from __future__ import absolute_import
 from numpy import *
-from string import join
+# from string import join
+from six.moves import range
 
 def iaintershow(Iab):
-    from iaseunion import iaseunion
-    from iaintersec import iaintersec
+    from .iaseunion import iaseunion
+    from .iaintersec import iaintersec
 
 
     assert (type(Iab) is tuple) and (len(Iab) == 2),'not proper fortmat of hit-or-miss template'
@@ -20,7 +22,7 @@ def iaintershow(Iab):
     saux = choose( S + iaseunion(Z,A), ( x, zero, one))
     s = ''
     for i in range(saux.shape[0]):
-        s=s+(join(list(saux[i]))+' \n')
+        s=s+("".join(list(saux[i]))+' \n')
 
     return s
 

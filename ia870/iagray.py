@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iagray
 
+from __future__ import absolute_import
 from numpy import *
 
 def iagray(f, TYPE="uint8", k1=None):

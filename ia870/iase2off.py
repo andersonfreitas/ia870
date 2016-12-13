@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Module iase2off
 
+from __future__ import absolute_import
 import numpy as np
 def iase2off(Bc,option='neigh'):
     '''Converts structuring element to list of neighbor offsets in graph image'''

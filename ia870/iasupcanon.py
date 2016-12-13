@@ -1,14 +1,16 @@
 # -*- encoding: utf-8 -*-
 # Module iasupcanon
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
+from six.moves import range
 
 def iasupcanon(f, Iab, theta=45, DIRECTION="CLOCKWISE"):
-    from iaintersec import iaintersec
-    from iainterot import iainterot
-    from iaunion import iaunion
-    from iasupgen import iasupgen
+    from .iaintersec import iaintersec
+    from .iainterot import iainterot
+    from .iaunion import iaunion
+    from .iasupgen import iasupgen
 
     DIRECTION = upper(DIRECTION)
     y = iaintersec(f,0)

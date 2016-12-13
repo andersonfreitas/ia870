@@ -1,12 +1,13 @@
 # -*- encoding: utf-8 -*-
 # Module iahmin
 
+from __future__ import absolute_import
 from numpy import *
-from iasecross import iasecross
+from .iasecross import iasecross
 
 def iahmin(f, h=1, Bc=iasecross()):
-    from iaaddm import iaaddm
-    from iasuprec import iasuprec
+    from .iaaddm import iaaddm
+    from .iasuprec import iasuprec
 
     g = iaaddm(f,h)
     y = iasuprec(g,f,Bc);

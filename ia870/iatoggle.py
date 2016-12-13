@@ -2,7 +2,7 @@
 # Module iatoggle
 
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iatoggle(f, f1, f2, OPTION="GRAY"):
     from iabinary import iabinary

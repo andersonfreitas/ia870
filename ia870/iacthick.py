@@ -1,17 +1,19 @@
 # -*- encoding: utf-8 -*-
 # Module iacthick
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
+from six.moves import range
 
 def iacthick(f, g, Iab=None, n=-1, theta=45, DIRECTION="CLOCKWISE"):
-    from iaisbinary import iaisbinary
-    from iasupgen import iasupgen
-    from iainterot import iainterot
-    from iaintersec import iaintersec
-    from iaunion import iaunion
-    from iaisequal import iaisequal
-    from iahomothick import iahomothick
+    from .iaisbinary import iaisbinary
+    from .iasupgen import iasupgen
+    from .iainterot import iainterot
+    from .iaintersec import iaintersec
+    from .iaunion import iaunion
+    from .iaisequal import iaisequal
+    from .iahomothick import iahomothick
     if Iab is None:
         Iab = iahomothick()
 

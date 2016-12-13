@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 # Module iaseintersec
 
+from __future__ import absolute_import
 from numpy import *
 
 def iaseintersec(B1, B2):
-    from ialimits import ialimits
+    from .ialimits import ialimits
     from ia870 import iamat2set, iaset2mat
 
     assert B1.dtype == B2.dtype, \
@@ -14,7 +15,7 @@ def iaseintersec(B1, B2):
     #if len(B1) == 0: return B2
     if len(B1.shape) == 1: B1 = B1[newaxis,:]
     if len(B2.shape) == 1: B2 = B2[newaxis,:]
-    if B1.shape <> B2.shape:
+    if B1.shape != B2.shape:
         inf = ialimits(B1)[0]
         h1,w1 = B1.shape
         h2,w2 = B2.shape

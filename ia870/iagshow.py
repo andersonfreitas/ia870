@@ -1,15 +1,16 @@
 # -*- encoding: utf-8 -*-
 # Module iagshow
 
+from __future__ import absolute_import
 from numpy import *
 
 def iagshow(X, X1=None, X2=None, X3=None, X4=None, X5=None, X6=None):
-    from iaisbinary import iaisbinary
-    from iagray import iagray
-    from iaunion import iaunion
-    from iaintersec import iaintersec
-    from ianeg import ianeg
-    from iaconcat import iaconcat
+    from .iaisbinary import iaisbinary
+    from .iagray import iagray
+    from .iaunion import iaunion
+    from .iaintersec import iaintersec
+    from .ianeg import ianeg
+    from .iaconcat import iaconcat
 
     if iaisbinary(X): X = iagray(X,'uint8')
     r = X

@@ -1,13 +1,14 @@
 # -*- encoding: utf-8 -*-
 # Module iaserot
 
+from __future__ import absolute_import
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iaserot(B, theta=45, DIRECTION="CLOCKWISE"):
-    from iamat2set import iamat2set
-    from iabinary import iabinary
-    from iaset2mat import iaset2mat
+    from .iamat2set import iamat2set
+    from .iabinary import iabinary
+    from .iaset2mat import iaset2mat
 
 
     DIRECTION = upper(DIRECTION)

@@ -2,7 +2,7 @@
 # Module iathick
 
 from numpy import *
-from string import upper
+from .upper import upper
 
 def iathick(f, Iab=None, n=-1, theta=45, DIRECTION="CLOCKWISE"):
     from iaisbinary import iaisbinary
