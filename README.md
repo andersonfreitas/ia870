@@ -7,7 +7,7 @@ A collection of Morphological Image Processing tools written in Python and the N
 reproduce most examples of the book: [E.R. Dougherty and R.A. Lotufo, Hands-on Morphological Image Processing, SPIE,
 2003, ISBN: 9780819447203.](https://books.google.com.br/books?id=-ch3fZTh08EC)
 
-![http://books.google.com.br/books/content?id=-ch3fZTh08EC&printsec=frontcover&img=1&zoom=1](Book cover)
+![Book cover](http://books.google.com.br/books/content?id=-ch3fZTh08EC&printsec=frontcover&img=1&zoom=1)
 
 ### Requirements
 
