@@ -1,6 +1,10 @@
 # ia870 (pymorph)
 ## Python Morphology Toolbox for Teaching Image Processing
 
+### About this fork
+
+This is a Python 2/3 compatible fork.
+
 ### Description
 
 A collection of Morphological Image Processing tools written in Python and the Numpy package. It provides tools to
@@ -11,7 +15,7 @@ reproduce most examples of the book: [E.R. Dougherty and R.A. Lotufo, Hands-on M
 
 ### Requirements
 
-This toolbox requires the ia636 toolbox. (pip install ia636)
+This toolbox requires the ia636 toolbox. (`pip install ia636`)
 
 ### Documentation
 
@@ -20,4 +24,4 @@ http://adessowiki.fee.unicamp.br/adesso/wiki/ia870/view
 
 ### Install
 
-pip install ia870
+`pip install ia870`
